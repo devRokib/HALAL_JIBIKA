@@ -1,0 +1,25 @@
+.headerSection{}
+.headerContainer{
+   width: 1200px;
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.headerLogo{}
+.headerMenu{
+   
+}
+.headerMenu ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 50px;
+}
+.headerMenu ul a{
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 15px ;
+}
+.navMenu{}
+.signMenu{}
