@@ -27,7 +27,7 @@ function SignUp() {
             <input type="password" name="password" id="password" placeholder='Password' />
             <input type="confirmPassword" name="confirmPassword" id="confirmPassword" placeholder='Confirm Password' />
             <input id="submitBtn" type="submit" value="Sign Up" />
-            <NavLink className='login' to= '/signout'>You have an account? Log in</NavLink>
+            <NavLink className='login' to= '/signin'>You have an account? Log in</NavLink>
           </form>
         </div>
     </div>

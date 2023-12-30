@@ -19,7 +19,7 @@ function Header() {
             </div>
             <div className="signMenu">
               <NavLink to="/signup">SignUp</NavLink>
-              <NavLink to="/signout">SignOut</NavLink>
+              <NavLink to="/signin">SignIn</NavLink>
             </div>
           </ul>
         </div>

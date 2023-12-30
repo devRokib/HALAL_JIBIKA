@@ -35,7 +35,7 @@ const routes = createBrowserRouter([
               element:<Favorite/>
             },
             {
-              path:'/signout',
+              path:'/signin',
               element:<SignIn/>
             },
             {
