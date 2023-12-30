@@ -1,5 +1,5 @@
-.headerSection{
-    background: #818FB4;
+ .headerSection{
+    background:#3498db;
     padding: 5px 0;
 }
 .headerContainer{
@@ -35,5 +35,13 @@
     font-size: 19px;
     font-family: monospace,sans-serif;
 }
-.navMenu{}
-.signMenu{}
+.navMenu{
+    display: flex;
+    align-items: center;
+}
+.signMenu{
+    display: flex;
+    align-items: center;
+} 
+
+
