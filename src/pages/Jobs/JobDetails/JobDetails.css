@@ -1,0 +1,11 @@
+.jobSection{
+    height: 100%;
+}
+.jobItem{
+    display: flex;
+    flex-direction: column;
+box-shadow: 1px 2px 20px 5px rgba(0,0,0, .1);
+
+}
+.jobContent{}
+.jobImg{}

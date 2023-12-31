@@ -8,7 +8,9 @@ import Favorite from "../pages/Favorite/Favorite";
 import SignIn from "../Component/Sign In/SignIn";
 import SignUp from "../Component/Sign Up/SignUp";
 import NotFound from "../pages/Not Found/NotFound";
-import UserProfileDetails from "../Component/User Profile/UserProfileDetails";
+import JobDetails from "../pages/Jobs/JobDetails/JobDetails";
+
+
 
 const routes = createBrowserRouter([
     {
@@ -43,18 +45,14 @@ const routes = createBrowserRouter([
             {
               path:'/signup',
               element:<SignUp/>,
-              children:[
-                
-              ]
-            },
-            {
-              path:'/userProfile',
-              element:<UserProfileDetails/>
-            }
-            
-        ]
-        
-    },
+             },
+             {
+              path:'/jobs/:id',
+              element:<JobDetails/>,
+              loader:({params})=>fetch(`http://localhost:9000/jobs/${params.id}`)
+             }
+         ]
+     },
     {
         path:'*',
         element:<NotFound/>

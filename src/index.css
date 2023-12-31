@@ -8,3 +8,6 @@ a{
     text-decoration: none;
     text-transform: capitalize;
 }
+img{
+    max-width: 100%;
+}

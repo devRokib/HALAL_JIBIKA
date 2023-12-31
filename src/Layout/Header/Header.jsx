@@ -1,5 +1,5 @@
 import './Header.css'
-import { Link, NavLink } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../fireConfige/FirebaseConfig';
@@ -15,31 +15,41 @@ function Header() {
   return (
     <div className='headerSection'>
       <div className="headerContainer">
-       <div className="headerLogo">
-         <NavLink to= '/'><h1>HALAL JIBIKA</h1></NavLink>
-       </div>
+       
         <div className="headerMenu">
-          <ul>
-            <div className="navMenu">
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/about">About</NavLink>
-              <NavLink to="/jobs">Jobs</NavLink>
-              <NavLink to="/favorite">Favorite</NavLink>
-              <NavLink to="/contact">Contact</NavLink>
-            </div>
-            <div className="signMenu">
-              {
-                user?<NavLink onClick={logout}>LogOut</NavLink>:<NavLink to="/signin">SignIn</NavLink>
-              }
-              <NavLink className='userSide' to='userProfile'>
-              <span className='UserDisplayName'>{user?.displayName}</span>
+          <nav>
+          <input type="checkbox" id='check' />
+            <label htmlFor="check" className='checkbtn'><i className="fa-solid fa-bars"></i></label>
+              <div className="headerLogo">
+                <NavLink to= '/'><h1>HALAL JIBIKA</h1></NavLink>
+                </div>
+                <ul>
               
-              <span>{user?.photoURL?<img   src={user?.photoURL} alt=""/> :<Link to='/signup'>SignUp</Link>}
-              </span>
-             </NavLink>
-              
-            </div>
-          </ul>
+              <div className="navMenu">
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/about">About</NavLink>
+                <NavLink to="/jobs">Jobs</NavLink>
+                <NavLink to="/favorite">Favorite</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
+              </div>
+              <div className="signMenu">
+                <NavLink>
+                {
+                  user?<NavLink onClick={logout}>LogOut</NavLink>:<NavLink to="/signin">SignIn</NavLink>
+                }
+                </NavLink>
+                
+                <NavLink>
+                <span className='UserDisplayName'>{user?.displayName}</span>
+                  <span><NavLink to='/signup'>{user?.photoURL?<img   src={user?.photoURL} alt=""/> :"SignUp"}</NavLink>
+                </span>
+                </NavLink>
+                </div>
+            </ul>
+           
+            
+          </nav>
+         
         </div>
       </div>
     </div>

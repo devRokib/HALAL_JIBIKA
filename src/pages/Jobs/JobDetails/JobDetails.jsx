@@ -1,15 +1,25 @@
-import React from 'react'
 
-function JobDetails({data}) {
-    const {id,companyName,description,logo,position,title,} = data
+import { useLoaderData } from 'react-router-dom'
+import './JobDetails.css'
+// import { NavLink } from 'react-router-dom';
+
+function JobDetails() {
+    const userData = useLoaderData()
+    console.log(userData)
+    const {logo,companyName,title} = userData
   return (
-    <div>
-      <h3>{id}</h3>
-      <h3>{companyName}</h3>
-      <h3>{description}</h3>
-      <h3>{logo}</h3>
-      <h3>{title}</h3>
-      <h3>{position}</h3>
+    <div className='jobSection'>
+     <div className="jobItem">
+     
+          <div className="jobImg">
+          <img src={logo} alt="companyName"/>
+          </div>
+
+          <div className="jobContent">
+          <h3>{companyName}</h3>
+          <h3>{title}</h3>
+          </div>
+         </div>
     </div>
   )
 }
