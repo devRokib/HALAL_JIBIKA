@@ -43,5 +43,16 @@
     display: flex;
     align-items: center;
 } 
+.signMenu .UserDisplayName {
+    font-size: 18px;
+    color: #fff;
+    margin-right: 5px;
+}
+.signMenu img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
 
 

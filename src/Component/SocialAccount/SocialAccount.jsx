@@ -22,10 +22,10 @@ function SocialAccount() {
             Error:{githubError?.message}
         </p>
     }
-    if(googleUser || githubUser){
-        navigate('/');
-        toast.success('Log in Successfully')
-    }
+    // if(googleUser || githubUser){
+    //     navigate('/');
+    //     toast.success('Log in Successfully')
+    // }
   return (
     <div>
       <div className="buttonContainer">
