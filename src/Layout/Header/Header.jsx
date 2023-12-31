@@ -1,9 +1,10 @@
 import './Header.css'
-import { NavLink } from 'react-router-dom'
-import { IoLogOut } from "react-icons/io5";
+import { Link, NavLink } from 'react-router-dom'
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../fireConfige/FirebaseConfig';
 import { signOut } from 'firebase/auth';
+
 
 function Header() {
   const[user] = useAuthState(auth)
@@ -30,10 +31,13 @@ function Header() {
               {
                 user?<NavLink onClick={logout}>LogOut</NavLink>:<NavLink to="/signin">SignIn</NavLink>
               }
+              <NavLink className='userSide' to='userProfile'>
               <span className='UserDisplayName'>{user?.displayName}</span>
               
-              <span>{user?.photoURL?<img src={user?.photoURL} alt=""/> :<NavLink to= "/signup">SignUp</NavLink>}
+              <span>{user?.photoURL?<img   src={user?.photoURL} alt=""/> :<Link to='/signup'>SignUp</Link>}
               </span>
+             </NavLink>
+              
             </div>
           </ul>
         </div>

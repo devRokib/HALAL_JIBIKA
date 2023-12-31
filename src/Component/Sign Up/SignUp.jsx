@@ -18,10 +18,12 @@ function SignUp() {
            if(loading||updating){
             return <Loading/>
            }
+
            let errorElement;
            if(error){
             errorElement = <p>{error?.message}</p>
            }
+           
            if(user){
             navigate('/')
            }

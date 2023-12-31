@@ -1,9 +1,15 @@
 import React from 'react'
+import { useLoaderData } from 'react-router-dom'
+import JobDetails from './JobDetails/JobDetails'
 
 function Jobs() {
+  const userData = useLoaderData()
+  console.log(userData)
   return (
     <div>
-      <h1>This is job page</h1>
+      {
+        userData.map((data)=><JobDetails key={data.id} data ={data}/>)
+      }
     </div>
   )
 }

@@ -54,5 +54,18 @@
     width: 40px;
     display: inline-block;
 }
+.active{
+    background: #2980b9;
+   
+}
+.headerMenu ul a {
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+    padding: 0px 10px;
+    color: #fff;
+    font-size: 19px;
+    font-family: monospace,sans-serif;
+}
 
 

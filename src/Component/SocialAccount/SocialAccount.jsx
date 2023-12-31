@@ -3,7 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import auth from '../../fireConfige/FirebaseConfig'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import Loading from '../Loading/Loading'
 import { toast } from 'react-toastify'
 
@@ -29,14 +29,14 @@ function SocialAccount() {
   return (
     <div>
       <div className="buttonContainer">
-          <button onClick={()=>signInWithGoogle()} className='signWithGoogle'>
+          <NavLink to='/' onClick={()=>signInWithGoogle()} className='signWithGoogle'>
             <span className="GoogleContent">SignUp With </span>
             <span className="GoogleIcon"><FcGoogle/></span>
-          </button>
-          <button onClick={()=>signInWithGithub()} className='signWithGithub'>
+          </NavLink>
+          <NavLink to='/' onClick={()=>signInWithGithub()} className='signWithGithub'>
             <span className="GithubContent">SignUp With </span>
             <span className="GithubIcon"><FaGithub /></span>
-          </button>
+          </NavLink>
           </div>
     </div>
   )

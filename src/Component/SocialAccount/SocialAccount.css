@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content:space-between;
-    max-width: 100%;
+    width:350px;
 }
 .signWithGoogle{
      display:flex; 
@@ -13,6 +13,7 @@
      padding: 5px 8px;
      border-radius: 20px;
      cursor: pointer;
+     margin-right: 10px;
 }
 .signWithGithub{
     display:flex; 
@@ -23,6 +24,7 @@
     padding: 5px 8px;
     border-radius: 20px;
     cursor: pointer;
+    margin-left: 10px;
 }
 .GoogleIcon{
     font-size: 16px;

@@ -8,6 +8,7 @@ import Favorite from "../pages/Favorite/Favorite";
 import SignIn from "../Component/Sign In/SignIn";
 import SignUp from "../Component/Sign Up/SignUp";
 import NotFound from "../pages/Not Found/NotFound";
+import UserProfileDetails from "../Component/User Profile/UserProfileDetails";
 
 const routes = createBrowserRouter([
     {
@@ -24,7 +25,8 @@ const routes = createBrowserRouter([
             },
             {
               path:'/jobs',
-              element:<Jobs/>
+              element:<Jobs/>,
+              loader:()=>fetch("http://localhost:9000/jobs")
             },
             {
               path:'/contact',
@@ -40,8 +42,16 @@ const routes = createBrowserRouter([
             },
             {
               path:'/signup',
-              element:<SignUp/>
+              element:<SignUp/>,
+              children:[
+                
+              ]
             },
+            {
+              path:'/userProfile',
+              element:<UserProfileDetails/>
+            }
+            
         ]
         
     },
