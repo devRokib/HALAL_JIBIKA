@@ -1,5 +1,4 @@
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+
 import {useCreateUserWithEmailAndPassword, useUpdateProfile} from'react-firebase-hooks/auth'
 import './SignUp.css'
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -7,6 +6,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import auth from "../../fireConfige/FirebaseConfig";
 import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
+import SocialAccount from "../SocialAccount/SocialAccount";
 
 
 function SignUp() {
@@ -62,19 +62,9 @@ function SignUp() {
     <div className='signupSection'>
         <div className="formContainer">
           <h1>Create Account</h1>
-          <div className="buttonContainer">
-          <button className='signWithGoogle'>
-            <span className="GoogleIcon"><FcGoogle/></span>
-            <span className="GoogleContent">SignUp With Google</span>
-          </button>
-          <button className='signWithGithub'>
-            <span className="GithubIcon"><FaGithub /></span>
-            <span className="GithubContent">SignUp With Github</span>
-          </button>
-          </div>
-            
+           
           <form action="#" onSubmit={formSubmitHandler}>
-
+            <SocialAccount/>
            <input  type="text" name="name" id="name" placeholder='Full Name' />
 
             <input type="email" name="email" id="email" placeholder='Email' />
