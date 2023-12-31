@@ -1,20 +1,33 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import {useCreateUserWithEmailAndPassword} from'react-firebase-hooks/auth'
+import {useCreateUserWithEmailAndPassword, useUpdateProfile} from'react-firebase-hooks/auth'
 import './SignUp.css'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import auth from "../../fireConfige/FirebaseConfig";
 import { toast } from "react-toastify";
+import Loading from "../Loading/Loading";
 
 
 function SignUp() {
     const [createUserWithEmailAndPassword,
-           user,landing,error ] = useCreateUserWithEmailAndPassword(auth)
-           
+           user,loading,error ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true})
+           const navigate = useNavigate()
+
+           let[updateProfile,updating] = useUpdateProfile(auth)
+           if(loading||updating){
+            return <Loading/>
+           }
+           let errorElement;
+           if(error){
+            errorElement = <p>{error?.message}</p>
+           }
+           if(user){
+            navigate('/')
+           }
 
 
-  const formSubmitHandler =((e)=>{
+  const formSubmitHandler = (async(e)=>{
         e.preventDefault();
         let name = e.target.name.value;
         let email = e.target.email.value;
@@ -39,7 +52,8 @@ function SignUp() {
           }
           
           else{
-            createUserWithEmailAndPassword(email,password)
+            await createUserWithEmailAndPassword(email,password)
+            await updateProfile({displayName:name})
             return toast.success('Successfully Submitted !')
           }
          
