@@ -25,10 +25,10 @@ function Job({data}) {
           <div className="editDeleteBtn">
             <NavLink to={`/jobs/${id}/editjob`}><FaEdit /></NavLink>
             <NavLink><MdDelete /></NavLink>
-            <NavLink to='/favorite'><MdOutlineFavorite /></NavLink>
+            <NavLink to={`/jobs/${id}/favorite`}><MdOutlineFavorite /></NavLink>
           </div>
 
-        <NavLink className='moreInfoBtn' to={`/jobs/${id}`}>
+        <NavLink className='moreInfoBtn' to={`/jobs/${id}/applynow`}>
             Apply Now
         </NavLink>
         </div>

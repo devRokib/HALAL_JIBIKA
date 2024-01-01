@@ -29,7 +29,7 @@ function Header() {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/about">About</NavLink>
                 <NavLink to="/jobs">Jobs</NavLink>
-                <NavLink to="/favorite">Favorite</NavLink>
+                <NavLink to="/jobs/id/favorite">Favorite</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
               </div>
               <div className="signMenu">

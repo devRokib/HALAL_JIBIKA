@@ -9,7 +9,8 @@ import SignIn from "../Component/Sign In/SignIn";
 import SignUp from "../Component/Sign Up/SignUp";
 import NotFound from "../pages/Not Found/NotFound";
 import JobDetails from "../pages/Jobs/JobDetails/JobDetails";
-import EditJob from "../Component/Add Job/EditJob";
+import EditJob from "../Component/Edit Job/EditJob";
+import ApplyNow from "../Component/ApplyNow/ApplyNow";
 
 
 
@@ -36,8 +37,9 @@ const routes = createBrowserRouter([
               element:<Contact/>
             },
             {
-              path:'/favorite',
-              element:<Favorite/>
+              path:'/jobs/:id/favorite',
+              element:<Favorite/>,
+              loader:({params})=>fetch(`http://localhost:9000/jobs/${params.id}`)
             },
             {
               path:'/signin',
@@ -55,6 +57,11 @@ const routes = createBrowserRouter([
              {
               path:'/jobs/:id/editjob',
               element:<EditJob/>,
+             },
+             {
+              path:'jobs/:id/applynow',
+              element:<ApplyNow/>,
+              loader:({params})=>fetch(`http://localhost:9000/jobs/${params.id}`)
              }
          ]
      },
