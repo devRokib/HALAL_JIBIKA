@@ -53,7 +53,7 @@ const routes = createBrowserRouter([
               loader:({params})=>fetch(`http://localhost:9000/jobs/${params.id}`)
              },
              {
-              path:'/editjob',
+              path:'/jobs/:id/editjob',
               element:<EditJob/>,
              }
          ]

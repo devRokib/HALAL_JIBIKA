@@ -1,5 +1,5 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
+import React from 'react'
 import './Job.css'
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -16,14 +16,14 @@ function Job({data}) {
         <div className="jobContent">
           <h1>Title: {title}</h1>
           <h1>Company: {companyName}</h1>
-          <h1>{position}</h1>
+          <h1>Position: {position}</h1>
         </div>
         <div className="jobButton">
         <NavLink className='moreInfoBtn' to={`/jobs/${id}`}>
             moreinfo
         </NavLink>
           <div className="editDeleteBtn">
-            <NavLink to='/editjob'><FaEdit /></NavLink>
+            <NavLink to={`/jobs/${id}/editjob`}><FaEdit /></NavLink>
             <NavLink><MdDelete /></NavLink>
             <NavLink to='/favorite'><MdOutlineFavorite /></NavLink>
           </div>
