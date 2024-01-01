@@ -1,11 +1,15 @@
  .headerSection{
     background:#3498db;
-    padding: 5px 5px;
+    padding: 7px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .headerContainer{
    max-width: 1200px;
    margin: auto;
    padding: 0 10px;
+  
 }
 .headerLogo {
     max-width: 30%;
@@ -15,9 +19,7 @@
     font-size: 37px;
     font-family: monospace,sans-serif;
 }
-/* .headerMenu {
-   
-} */
+
  ul{
     display: flex;
    justify-content: space-between;
@@ -63,7 +65,7 @@
     margin: 0 5px;
     padding: 0px 10px;
     color: #fff;
-    font-size: 19px;
+    font-size: 21px;
     font-family: monospace,sans-serif;
 }
 .headerMenu nav{
@@ -96,7 +98,7 @@
         
     }
     .headerLogo {
-        width: 25%;
+        width: 20%;
     }
     ul {
         width: 75%;
@@ -104,14 +106,44 @@
     .headerLogo h1 {
         color: #fff;
         font-size: 26px;
-        font-family: monospace,sans-serif;
+        
     }
 }
-/* @media (max-width:950px) {
+@media (max-width:950px) {
     
-} */
+    .headerLogo h1 {
+        font-size: 20px;
+      }
+    .navMenu {
+         max-width: 70%;
+    }
+    .headerMenu ul a {
+        margin: 0 1px;
+        padding: 0px 3px;
+      }
+      .headerMenu {
+        padding: 0 50px;
+    }
+    .headerLogo {
+        width: 20%;
+    }
+   
+   
+}
+@media (max-width:900px) {
+    .headerMenu ul a {
+        margin: 0px 1px;
+       }
+     
+    .headerLogo {
+        width: 20%;
+    }
+    .headerLogo h1{
+        font-size: 20;
+    }
+}
 
-@media (max-width: 800px) {
+@media (max-width: 830px) {
      nav ul a{
         font-size: 16px;
 
@@ -121,28 +153,20 @@
     }
     .navMenu {
         display: block;
-        width: 50%;
+        width: 100%;
         line-height: 35px;
         
     }
-    .signMenu {
-        display: block;
-        line-height: 15px;
-        width: 50%;
-    }
-    
     ul{
         display: flex;
         justify-content: center;
        position: absolute;
-        width: 100%;
-        height: 100vh;
-        top: 70px;
+        top: 41px;
         left: 100%;
         text-align: center;
         background-color: #2c3e50;
-        z-index: 9;
-        transition: all .3s;
+         transition: all .3s;
+         height: 100vh;
     }
     .headerMenu ul a {
         display: block;
@@ -161,16 +185,38 @@
         a:hover{
             color: #3498db;
         }
-        .signMenu{
+        .signMenu {
             display: block;
-            text-align: center;
+            line-height: 15px;
             max-width: 100%;
-            line-height: 20px;
-        } 
-        
+            margin-top: 15px;
+            text-align: center;
+        }
+       
      nav{
         display: flex;
         flex-direction: row-reverse;
      }
+     ul{
+        display:block;
+       align-items: center;
+        width: 100%;
+    } 
+    .navMenu{
+        display: block;
+        text-align: center;
+        max-width:100%;
+    }
         
+  }
+  @media (max-width:780px) {
+    ul{
+         top: 60px;
+      }
+    .headerLogo{
+        max-width: 100%;
+    }
+    .headerLogo{
+        max-width: 100%;
+    }
   }

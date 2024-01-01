@@ -8,11 +8,13 @@ function Jobs() {
   // const {id,title,companyName,logo} = userData
   
   return (
-    <div className='jobsMainContainer'>
-      {
-        userData.map((data)=><Job key={data.id}  data= {data}/>)
-      }
-      
+    <div className="jobsMainSection">
+      <h1 style={{textAlign:'center'}}>Available Jobs</h1>
+        <div className='jobsMainContainer'>
+        {
+          userData.map((data)=><Job key={data.id}  data= {data}/>)
+        }
+        </div>
     </div>
   )
 }

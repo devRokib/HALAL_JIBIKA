@@ -9,6 +9,7 @@ import SignIn from "../Component/Sign In/SignIn";
 import SignUp from "../Component/Sign Up/SignUp";
 import NotFound from "../pages/Not Found/NotFound";
 import JobDetails from "../pages/Jobs/JobDetails/JobDetails";
+import EditJob from "../Component/Add Job/EditJob";
 
 
 
@@ -50,6 +51,10 @@ const routes = createBrowserRouter([
               path:'/jobs/:id',
               element:<JobDetails/>,
               loader:({params})=>fetch(`http://localhost:9000/jobs/${params.id}`)
+             },
+             {
+              path:'/editjob',
+              element:<EditJob/>,
              }
          ]
      },
