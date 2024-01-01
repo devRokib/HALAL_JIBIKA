@@ -5,6 +5,7 @@ function Favorite() {
   const favoriteLoder = useLoaderData()
   // console.log(favoriteLoder)
   const {title,companyName,logo,position,id,description} = favoriteLoder
+  
   return (
     <div>
       <div className="favoriteSection">
@@ -19,7 +20,7 @@ function Favorite() {
               <h2>{companyName}</h2>
               <h4>{position}</h4>
               <p>{description}</p>
-              <NavLink className='ApplyNowBtn'>Apply Now</NavLink>
+              <NavLink to={`/jobs/${id}/favorite/applynow`} className='ApplyNowBtn'>Apply Now</NavLink>
             </div>
           </div>
           <hr />

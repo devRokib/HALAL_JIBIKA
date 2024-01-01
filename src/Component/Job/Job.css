@@ -1,6 +1,9 @@
 .jobImg img{
-    width:390px;
+   width:400px;
     height:250px;
+}
+.jobImg {
+    width: 400px;
 }
 .jobItem{
     box-shadow: 1px 2px 20px 5px rgba(0,0,0, .2);

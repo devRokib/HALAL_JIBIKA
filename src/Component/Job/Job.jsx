@@ -28,7 +28,7 @@ function Job({data}) {
             <NavLink to={`/jobs/${id}/favorite`}><MdOutlineFavorite /></NavLink>
           </div>
 
-        <NavLink className='moreInfoBtn' to={`/jobs/${id}/applynow`}>
+        <NavLink className='moreInfoBtn' to={`/jobs/${id}/applynow/`}>
             Apply Now
         </NavLink>
         </div>
