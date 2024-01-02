@@ -5,7 +5,6 @@ import LatestJob from './LatestJob/LatestJob'
 function Home() {
   const data = useLoaderData()
   
-  console.log(data)
   return (
     <div>
       <div className="homeSection">

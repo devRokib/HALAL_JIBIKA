@@ -2,11 +2,23 @@ import './Jobs.css'
 import { NavLink, useLoaderData } from 'react-router-dom'
 import JobDetails from './JobDetails/JobDetails'
 import Job from '../../Component/Job/Job'
+import { useState } from 'react'
 
 function Jobs() {
   const userData = useLoaderData()
-  // const {id,title,companyName,logo} = userData
-  
+  const [jobs, setJobs] = useState([
+    { id: 1, title: 'Job 1',  },
+    { id: 2, title: 'Job 2',  },
+    
+  ]);
+
+  const handleDelete = async (id) => {
+    try {
+     await new Promise(resolve => setTimeout(resolve, 0));
+     setJobs((prevJobs) => prevJobs.filter((job) => job.id !== id));
+    } catch (error) {
+    }
+  };
   return (
     <div className="jobsMainSection">
      <div className="jobsTitle">
@@ -15,7 +27,7 @@ function Jobs() {
      </div>
         <div className='jobsMainContainer'>
         {
-          userData.map((data)=><Job key={data.id}  data= {data}/>)
+          userData.map((data)=><Job key={data.id}  data= {data} onDelete={handleDelete} userData={userData} setJobs={setJobs}/>)
         }
         </div>
         <div className="addjobWrapper">

@@ -4,40 +4,32 @@ import './Job.css'
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { MdOutlineFavorite } from "react-icons/md";
+import Swal from 'sweetalert2';
 
-function Job({data,onDelete }) {
-    const {id,title,companyName,description,position,logo} = data;
-    const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
-    const [error,setError] = useState()
-    const handleDeleteClick = () => {
-      setShowDeleteConfirmation(true);
-    };
-   
-    const handleConfirmDelete =async () => {
-      onDelete(id); 
-      Swal.fire({
-        title: 'Are you sure you want to delete this job?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then(async(result) => {
-        if (result.isConfirmed) {
-          await onDelete(id)
-            .then(() => {
-              Swal.fire(
-                'Deleted!',
-                'The job has been deleted successfully.',
-                'success'
-              );
-            })
-            .catch((error) => {
-               Swal.fire('Error!', 'Something went wrong. Please try again.', 'error');
-            });
-        }
-      });
-    };
+function Job({data,onDelete,setJobs,userData }) {
+  const { id, title, companyName, description, position, logo } = data;
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+
+  const handleDeleteClick = () => {
+    setShowDeleteConfirmation(true);
+  };
+
+  const handleConfirmDelete = async () => {
+    try {
+      await onDelete(id);
+      setJobs((prevJobs) => prevJobs.filter((job) => job.id !== id));
+
+      Swal.fire(
+        'Deleted!',
+        'The job has been deleted successfully.',
+        'success'
+      );
+    } catch (error) {
+      
+      Swal.fire('Error!', 'Something went wrong. Please try again.', 'error');
+    }
+  };
+    
   return (
     <div className='jobSection'>
       <div className="jobItem">
@@ -76,4 +68,4 @@ function Job({data,onDelete }) {
   )
 }
 
-export default Job
+export default Job;
