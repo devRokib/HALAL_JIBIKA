@@ -1,5 +1,10 @@
-.footer {
+.footerSection{
     background-color: #333;
+}
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    
     color: #fff;
     padding: 20px;
     display: flex;
@@ -8,7 +13,25 @@
   
   .footerColumn {
     flex: 1;
-    text-align: center;
+    
   }
-  
+  .footerColumn h3{
+    font-size: 25px;
+    font-family: sans-serif;
+    margin-bottom: 5px;
+
+  }
+  .footerMenu {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    list-style: none;
+    align-items: baseline;
+    font-size: 20px;
+}
+.footerMenu a {
+    display: inline-block;
+    color: #fff;
+    margin-bottom: 4px;
+}
  
