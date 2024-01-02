@@ -21,8 +21,9 @@ const routes = createBrowserRouter([
         children:[
             {
               path:'/',
-              element:<Home/>
-            },
+              element:<Home/>,
+              loader:async ()=>fetch(`http://localhost:9000/jobs`)
+             },
             {
               path:'/about',
               element:<About/>

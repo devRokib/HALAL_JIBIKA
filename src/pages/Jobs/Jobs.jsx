@@ -9,7 +9,10 @@ function Jobs() {
   
   return (
     <div className="jobsMainSection">
-      <h1 style={{textAlign:'center'}}>Available Jobs</h1>
+     <div className="jobsTitle">
+     <h1 style={{textAlign:'center'}}>Available Jobs</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et non voluptas adipisci odit, sapiente voluptates.</p>
+     </div>
         <div className='jobsMainContainer'>
         {
           userData.map((data)=><Job key={data.id}  data= {data}/>)

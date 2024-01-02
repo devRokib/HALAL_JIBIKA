@@ -11,4 +11,14 @@
     font-weight: 500;
     line-height: 25px;
 }
+.jobsTitle {
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    padding: 20px 0;
+}
+.jobsTitle h1 {
+    font-family: sans-serif;
+    margin-bottom: 6px;
+}
 

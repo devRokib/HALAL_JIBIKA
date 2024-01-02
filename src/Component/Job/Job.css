@@ -21,14 +21,83 @@
     align-items: center;
     background: #3498db;
 }
-.moreInfoBtn{
+.moreInfoBtn {
     display: flex;
     align-items: center;
     color: #fff;
     font-size: 20px;
     cursor: pointer;
     font-weight: 600;
+    background: #333;
+    padding: 4px 8px;
+    display: inline-block;
+    border-radius: 7px;
 }
 .moreInfoBtn:hover{
     background: #2980b9;
   }
+  .jobContent h1 {
+    font-weight: 500;
+    line-height: 25px;
+    font-family: system-ui;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+}
+.jobContent h2 {
+    font-family: system-ui;
+    font-weight: 400;
+}
+.jobContent h3 {
+    font-family: system-ui;
+    font-weight: normal;
+}
+.editDeleteBtn {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    
+    color: #fff;
+}
+
+  .editBtn,
+  .deleteBtn,
+  .favoriteBtn {
+    background-color: #007bff; 
+    color: #fff;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; 
+    margin-right: 10px;
+    
+  }
+  
+  
+  .editBtn:hover,
+  .deleteBtn:hover,
+  .favoriteBtn:hover {
+    background-color: #0062cc;
+  }
+  
+  
+  .deleteBtn {
+    background-color: #dc3545; 
+  }
+  
+  .deleteBtn:hover {
+    background-color: #c82333; 
+  }
+  
+  
+  .editDeleteBtn a {
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  
+  .editDeleteBtn a svg {
+    margin-right: 0px;
+  }
+  
