@@ -21,4 +21,15 @@
     font-family: sans-serif;
     margin-bottom: 6px;
 }
-
+.addJobBtn {
+    display: inline-block;
+    font-size: 25px;
+    margin-top: 22px;
+    background: #2e3e56;
+    color: #fff;
+    padding: 5px 82px;
+    border-radius: 5px;
+}
+.addjobWrapper{
+    text-align: center;
+}

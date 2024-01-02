@@ -11,6 +11,7 @@ import NotFound from "../pages/Not Found/NotFound";
 import JobDetails from "../pages/Jobs/JobDetails/JobDetails";
 import EditJob from "../Component/Edit Job/EditJob";
 import ApplyNow from "../Component/ApplyNow/ApplyNow";
+import AddJob from "../Component/AddJob/AddJob";
 
 
 
@@ -45,6 +46,10 @@ const routes = createBrowserRouter([
             {
               path:'/signin',
               element:<SignIn/>
+            },
+            {
+              path:'/addjob',
+              element:<AddJob/>
             },
             {
               path:'/signup',

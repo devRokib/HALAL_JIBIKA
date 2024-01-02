@@ -4,7 +4,7 @@ import './Job.css'
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { MdOutlineFavorite } from "react-icons/md";
-import Swal from 'sweetalert2';
+
 function Job({data,onDelete }) {
     const {id,title,companyName,description,position,logo} = data;
     const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
@@ -12,8 +12,8 @@ function Job({data,onDelete }) {
     const handleDeleteClick = () => {
       setShowDeleteConfirmation(true);
     };
-  
-    const handleConfirmDelete = () => {
+   
+    const handleConfirmDelete =async () => {
       onDelete(id); 
       Swal.fire({
         title: 'Are you sure you want to delete this job?',
@@ -22,9 +22,9 @@ function Job({data,onDelete }) {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
+      }).then(async(result) => {
         if (result.isConfirmed) {
-          onDelete(id)
+          await onDelete(id)
             .then(() => {
               Swal.fire(
                 'Deleted!',
@@ -71,6 +71,7 @@ function Job({data,onDelete }) {
           <button onClick={() => setShowDeleteConfirmation(false)}>Cancel</button>
         </div>
       )}
+      
     </div>
   )
 }

@@ -18,6 +18,9 @@ function Jobs() {
           userData.map((data)=><Job key={data.id}  data= {data}/>)
         }
         </div>
+        <div className="addjobWrapper">
+        <NavLink className='addJobBtn' to='/addjob'>add job</NavLink>
+        </div>
     </div>
   )
 }
