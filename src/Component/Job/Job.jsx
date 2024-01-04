@@ -50,7 +50,7 @@ function Job({data,onDelete,setJobs, }) {
           <div className="editDeleteBtn">
             <NavLink className='editBtn' to={`/jobs/${id}/editjob`}><FaEdit /></NavLink>
             <NavLink  onClick={handleDeleteClick} className='deleteBtn'><MdDelete /></NavLink>
-            <NavLink className='favoriteBtn' to={`/jobs/${id}/favorite`}><MdOutlineFavorite /></NavLink>
+            <NavLink  to={`/jobs/${id}/favorite`} className='favoriteBtn'><MdOutlineFavorite /></NavLink>
           </div>
 
         <NavLink className='moreInfoBtn' to={`/jobs/${id}/applynow`}>

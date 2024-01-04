@@ -14,7 +14,9 @@
     text-align: center;
     
 }
-  
+  .favoriteContent p {
+    text-align: left;
+  }
   .favoriteItem {
     display: flex;
     align-items: center;

@@ -20,8 +20,9 @@
     max-width: 700px;
     margin: auto;
     padding-bottom: 10px;
-  }
-  
+    text-align: center;
+    margin-bottom: 20px;
+}
   .contactForm {
     display: flex;
     flex-direction: column;
@@ -66,7 +67,9 @@
     color: #007bff;
     margin-top: 10px;
     margin-bottom: 6px;
-  }
+    text-align: center;
+}
+
   
   .contactInfo p {
     color: #555;
@@ -78,7 +81,21 @@
     margin: auto;
     margin-top: 20px;
   }
-  
+  .socialMedia a {
+    display: flex;
+    height: 30px;
+    width: 30px;
+    background: #3498db;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all .3s;
+}
+.socialMedia a:hover{
+    background: #2980b9;
+    transform: scale(1.2);
+}
   .socialMedia h2 {
     color: #007bff;
     margin-top: 10px;
