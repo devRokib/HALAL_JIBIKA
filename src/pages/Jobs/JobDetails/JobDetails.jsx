@@ -12,7 +12,7 @@ function JobDetails() {
       <div className="jobDetailsContainer">
           <div className="jobDetailsItem">
             <div className="jobDetailsImg">
-            <img src={logo} alt="companyName"/>
+            <img src={logo} alt=""/>
             </div>
 
             <div className="detailsContent">

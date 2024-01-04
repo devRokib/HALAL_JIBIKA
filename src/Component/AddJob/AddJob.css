@@ -12,11 +12,14 @@ form {
   }
   
  
-  label {
+
+  .editSection .editForm label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
     display: block;
-    margin-bottom: 8px;
     font-weight: 600;
-  }
+}
   
   input[type="text"],
   textarea {
@@ -54,7 +57,7 @@ form {
     background-color: #3e8e41; 
   }
   
-  /* Error message (optional) */
+  
   .error-message {
     color: red;
     font-weight: bold;

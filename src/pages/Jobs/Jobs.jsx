@@ -1,6 +1,6 @@
 import './Jobs.css'
 import { NavLink, useLoaderData } from 'react-router-dom'
-import JobDetails from './JobDetails/JobDetails'
+
 import Job from '../../Component/Job/Job'
 import { useState } from 'react'
 
@@ -25,7 +25,7 @@ function Jobs() {
      <h1 style={{textAlign:'center'}}>Available Jobs</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et non voluptas adipisci odit, sapiente voluptates.</p>
      </div>
-        <div className='jobsMainContainer'>
+        <div className='jobMainContainer'>
         {
           userData.map((data)=><Job key={data.id}  data= {data} onDelete={handleDelete} userData={userData} setJobs={setJobs}/>)
         }

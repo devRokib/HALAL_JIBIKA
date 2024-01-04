@@ -5,8 +5,9 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { MdOutlineFavorite } from "react-icons/md";
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
-function Job({data,onDelete,setJobs,userData }) {
+function Job({data,onDelete,setJobs, }) {
   const { id, title, companyName, description, position, logo } = data;
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
@@ -15,6 +16,7 @@ function Job({data,onDelete,setJobs,userData }) {
   };
 
   const handleConfirmDelete = async () => {
+    axios.delete(`http://localhost:9000/jobs/${id}`)
     try {
       await onDelete(id);
       setJobs((prevJobs) => prevJobs.filter((job) => job.id !== id));
@@ -51,7 +53,7 @@ function Job({data,onDelete,setJobs,userData }) {
             <NavLink className='favoriteBtn' to={`/jobs/${id}/favorite`}><MdOutlineFavorite /></NavLink>
           </div>
 
-        <NavLink className='moreInfoBtn' to={`/jobs/${id}/applynow/`}>
+        <NavLink className='moreInfoBtn' to={`/jobs/${id}/applynow`}>
             Apply Now
         </NavLink>
         </div>

@@ -7,26 +7,44 @@ import auth from "../../fireConfige/FirebaseConfig";
 import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
 import SocialAccount from "../SocialAccount/SocialAccount";
+import { useEffect, useState } from 'react';
 
 
 function SignUp() {
     const [createUserWithEmailAndPassword,
-           user,loading,error ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true})
+           user,loading,error ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true })
            const navigate = useNavigate()
 
-           let[updateProfile,updating] = useUpdateProfile(auth)
+           const [updateProfile,updating] = useUpdateProfile(auth)
            if(loading||updating){
-            return <Loading/>
+            <Loading/>
            }
 
-           let errorElement;
-           if(error){
-            errorElement = <p>{error?.message}</p>
-           }
+         
+          useEffect(() => {
+           const errorData = (()=>{
+            if (error) {
+              if(error.code === 'auth/email-already-in-use'){
+               return toast.error('email is already taken')
+              }
+              else{
+                console.log(error.message)
+              }
+            }
+           })
+           errorData()
+            
+          }, [error]);
            
-           if(user){
-            navigate('/')
-           }
+           useEffect(() => {
+           const userData = (()=>{
+            if (user) {
+              navigate('/');
+              return toast.success('Successfully Submitted !')
+            }
+           })
+           userData()
+          }, [user, navigate]);
 
 
   const formSubmitHandler = (async(e)=>{
@@ -35,36 +53,22 @@ function SignUp() {
         let email = e.target.email.value;
         let password = e.target.password.value;
         let confirmPassword = e.target.confirmPassword.value;
-          // console.log(name, email, password, confirmPassword)
+        
           e.target.reset();
-          if(name === ""){
-           return toast.error("please give your name")
+          if(!name || !email || !password || password !==confirmPassword){
+           return toast.error("Please Provide a valid value")
           }
           
-          else if(email === ""){
-           return toast.error('Email field is  required')
-          }
-
-          else if(password < 6){
-           return toast.error('Minimum  6 Digit Password is required')
-          }
-
-          else if(password !== confirmPassword){
-           return toast.error(" Password doesn't match")
-          }
-          
-          else{
+        else{
             await createUserWithEmailAndPassword(email,password)
             await updateProfile({displayName:name})
-            return toast.success('Successfully Submitted !')
           }
-         
-  })
+   })
   return (
     <div className='signupSection'>
         <div className="formContainer">
           <h1>Create Account</h1>
-           
+          
           <form action="#" onSubmit={formSubmitHandler}>
             <SocialAccount/>
            <input  type="text" name="name" id="name" placeholder='Full Name' />

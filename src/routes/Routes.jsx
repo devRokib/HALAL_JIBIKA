@@ -12,6 +12,7 @@ import JobDetails from "../pages/Jobs/JobDetails/JobDetails";
 import EditJob from "../Component/Edit Job/EditJob";
 import ApplyNow from "../Component/ApplyNow/ApplyNow";
 import AddJob from "../Component/AddJob/AddJob";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -49,14 +50,18 @@ const routes = createBrowserRouter([
             },
             {
               path:'/addjob',
-              element:<AddJob/>
+              element:(
+                <PrivateRoute>
+                  <AddJob/>
+                </PrivateRoute>
+              )
             },
             {
               path:'/signup',
               element:<SignUp/>,
              },
              {
-              path:'/jobs/:id',
+              path:'/jobs/:id/',
               element:<JobDetails/>,
               loader:({params})=>fetch(`http://localhost:9000/jobs/${params.id}`)
              },
@@ -66,7 +71,11 @@ const routes = createBrowserRouter([
              },
              {
               path:'jobs/:id/applynow',
-              element:<ApplyNow/>,
+              element:(
+                <PrivateRoute>
+                <ApplyNow/>
+                </PrivateRoute>
+              ),
               loader:({params})=>fetch(`http://localhost:9000/jobs/${params.id}`)
              }
          ]

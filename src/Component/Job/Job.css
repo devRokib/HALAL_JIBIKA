@@ -1,16 +1,36 @@
-.jobImg img{
-   width:400px;
-    height:250px;
+.jobItem {
+  max-width: 380px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  transition: all .3s;
+}
+.jobItem:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 .jobImg {
-    width: 400px;
+  height: 200px; 
+  overflow: hidden; 
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
-.jobItem{
+.jobImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+/* .jobImg {
+    width: 400px;
+} */
+/* .jobItem{
     box-shadow: 1px 2px 20px 5px rgba(0,0,0, .2);
     border-radius: 5px;
-}
-.jobContent{
-    padding: 10px 15px;
+} */
+.jobContent {
+  padding:  15px;
+  text-align: left;
 }
 .jobButton{
     display: flex;
@@ -37,20 +57,22 @@
     background: #2980b9;
   }
   .jobContent h1 {
+    font-size: 19px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    font-family: sans-serif;
     font-weight: 500;
-    line-height: 25px;
-    font-family: system-ui;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 30px;
 }
 .jobContent h2 {
-    font-family: system-ui;
-    font-weight: 400;
+  font-size: 17px;
+  color: #666;
+  font-family: sans-serif;
+  font-weight: 500;
 }
 .jobContent h3 {
-    font-family: system-ui;
-    font-weight: normal;
+  font-size: 15px;
+  color: #999;
+  text-transform: capitalize;
 }
 .editDeleteBtn {
     display: flex;
@@ -99,60 +121,5 @@
   
   .editDeleteBtn a svg {
     margin-right: 0px;
-  }
-  
-/* Tablet Styles (768px to 1023px) */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .jobButton,
-  .editDeleteBtn {
-    flex-direction: row;
-  }
-
-  .moreInfoBtn,
-  .editBtn,
-  .deleteBtn,
-  .favoriteBtn {
-    font-size: 18px;
-    margin-bottom: 0;
-    margin-right: 10px;
-  }
-}
-
-/* Laptop Styles (1024px to 1279px) */
-@media only screen and (min-width: 1024px) and (max-width: 1279px) {
-  .jobContent h1 {
-    font-size: 28px;
-    line-height: 35px;
-  }
-
-  .moreInfoBtn,
-  .editBtn,
-  .deleteBtn,
-  .favoriteBtn {
-    font-size: 20px;
-  }
-}
-
-/* Desktop Styles (1280px and above) */
-@media only screen and (min-width: 1280px) {
-  .jobContent h1 {
-    font-size: 32px;
-    line-height: 40px;
-  }
-
-  .moreInfoBtn,
-  .editBtn,
-  .deleteBtn,
-  .favoriteBtn {
-    font-size: 24px;
-  }
-}
-   
-  @media only screen and (min-width: 768px) {
-    .jobButton,
-    .editDeleteBtn {
-      flex-direction: row; /* Reset to horizontal layout for larger screens */
-      align-items: center;
-    }
   }
   

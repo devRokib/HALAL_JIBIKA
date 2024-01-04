@@ -18,10 +18,14 @@ function Footer() {
           </ul>
         </div>
         <div className="footerColumn">
-          <h3>Column 2</h3>
-          <p>Content for column 2 goes here.</p>
-          <p>Additional content for column 2.</p>
-        </div>
+          <h3>Job for You</h3>
+          <p>Latest Job 1</p>
+          <p>Latest Job 2</p>
+          <p>Latest Job 3</p>
+          <p>Latest Job 4</p>
+          <p>Latest Job 5</p>
+          <p>Latest Job 6</p>
+         </div>
         <div className="footerColumn">
           <h3>Column 3</h3>
           <p>Content for column 3 goes here.</p>

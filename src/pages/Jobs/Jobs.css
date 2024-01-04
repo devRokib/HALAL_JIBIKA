@@ -1,9 +1,24 @@
+.jobsMainSection{
+    background-color: #f5f5f5; 
+    display: flex;
+    /* gap: 30px; */
+    flex-wrap: wrap; 
+}
 .jobsMainContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    /* grid-template-columns: repeat(auto-fit,minmax(25%,1fr)); */
+    max-width:  1200px;
+    margin: 0 auto;
+   
+}
+.jobMainContainer {
     display: grid;
     grid-template-columns: auto auto auto;
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
-    gap: 20px;
+    padding: 0 10px;
 }
 .jobsMainContainer h1 {
     font-size: 23px;
@@ -32,4 +47,21 @@
 }
 .addjobWrapper{
     text-align: center;
+}
+
+
+/*latestJobResponsiv*/
+@media (max-width:790px) {
+    .jobMainContainer {
+        display: grid;
+        grid-template-columns: auto auto ;
+       
+    }
+}
+@media (max-width:576px) {
+    .jobMainContainer {
+        display: grid;
+        grid-template-columns: auto ;
+       margin: 0 auto;
+    }
 }

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './AddJob.css'
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 function AddJob() {
     const [jobData, setJobData] = useState({
         title: '',
@@ -9,37 +12,58 @@ function AddJob() {
         position: '',
         logo:'',
     });
-
+    const [error,setError] = useState()
+    const navigate = useNavigate()
     const handleChange = (event) => {
         setJobData({ ...jobData, [event.target.name]: event.target.value });
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
-        try {
-            const response = await axios.post(` http://localhost:9000/jobs`,jobData)
-            setJobData('job added success' ,response.data)
+    
+         if (!jobData.title || !jobData.companyName || !jobData.description || !jobData.position || !jobData.logo) {
+            return toast.error('Please fill in all required fields.');
             
-            setJobData({ ...jobData, logo: null });
+        }
+        else{
+
+        }
+           
+        
+    
+        try {
+            const response = await axios.post(`http://localhost:9000/jobs`, jobData);
+           setJobData({
+                title: '',
+                companyName: '',
+                description: '',
+                position: '',
+                logo: '',
+            });
+            navigate('/jobs')
+            return   Swal.fire(
+                'Added!',
+                'The job has been added successfully.',
+                'success'
+              );
         } catch (error) {
-            console.error(error);
+           error(error);
         }
     };
-
+    
     return (
         <div className="addJobSection">
             <div className="addJobContainer">
                 <div className="formContainer">
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="title">Title:</label>
-                        <input type="text" id="title" name="title" value={jobData.title} onChange={handleChange} required />
+                        <input type="text" id="title" name="title" value={jobData.title} onChange={handleChange} />
 
                         <label htmlFor="companyName">Company Name:</label>
-                        <input type="text" id="companyName" name="companyName" value={jobData.companyName} onChange={handleChange} required />
+                        <input type="text" id="companyName" name="companyName" value={jobData.companyName} onChange={handleChange}  />
 
                         <label htmlFor="description">Description:</label>
-                        <input type='text' id="description" name="description" value={jobData.description} onChange={handleChange} required />
+                        <input type='text' id="description" name="description" value={jobData.description} onChange={handleChange}  />
 
                         <label htmlFor="position">Position:</label>
                         <input type="text" id="position" name="position" value={jobData.position} onChange={handleChange}  />

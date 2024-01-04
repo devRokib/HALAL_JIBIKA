@@ -20,32 +20,22 @@ function ApplyNow() {
       const handleSubmit = (event) => {
         event.preventDefault(); 
         
-        if (!formData.fullName) {
-            toast.error('Name Field is Required');
+        if (!formData.fullName || !formData.email || !formData.companyName || !formData.position || !formData.number) {
+            toast.error('Please fill all Required Field ');
            }
-        else if (!formData.email) {
-            toast.error('Email Field is Required');
-           }
-           else if (!formData.companyName) {
-            toast.error('CompanyName Field is Required');
-           }
-        else if (!formData.position) {
-            toast.error('Position Field is Required');
-           }
-        else if (!formData.number) {
-            toast.error('Number Field is Required');
-           }
+       
           else{
             toast.success('Application submitted successfully!')
             navigate('/jobs/id')
+            setFormData({
+              fullName: '',
+              email: '',
+              companyName: '',
+              position: '',
+              number: '',
+            });
           }
-          setFormData({
-            fullName: '',
-            email: '',
-            companyName: '',
-            position: '',
-            number: '',
-          });
+         
      };
     
   return (

@@ -1,4 +1,4 @@
-.footerSection{
+/* .footerSection{
     background-color: #333;
 }
 .footer {
@@ -34,4 +34,62 @@
     color: #fff;
     margin-bottom: 4px;
 }
- 
+  */
+  /* Footer.css */
+
+.footerSection {
+  background-color: #333;
+  padding: 20px 10px; /* Adjust padding for smaller screens */
+}
+
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Allow columns to wrap to the next row on smaller screens */
+  justify-content: space-around;
+}
+
+.footerColumn {
+  flex: 1;
+  margin: 10px;
+  text-align: left;
+}
+
+.footerColumn h3 {
+  font-size: 25px;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.footerMenu {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  list-style: none;
+  align-items: baseline;
+  font-size: 20px;
+}
+
+.footerMenu a {
+  display: inline-block;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+/* Media Query for Tablets */
+@media screen and (max-width: 768px) {
+  .footerColumn {
+    flex-basis: 100%; /* Make columns full width on tablets */
+  }
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 480px) {
+  .footerMenu {
+    text-align: center; /* Center align menu items on smaller screens */
+  }
+}

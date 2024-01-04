@@ -5,10 +5,8 @@ function LatestJob({latest}) {
     const {logo,title,companyName,position} = latest
   return (
     <div>
-       
        <div className="latestJobSection">
-        
-        <div className="latestContainer">
+         <div className="latestjobContainer">
           <div className="latestJobs">
             <div className="latestJob">
               <div className="latestImg">
@@ -26,7 +24,7 @@ function LatestJob({latest}) {
               </div>
             </div>
           </div>
-        </div>
+          </div>
       </div>
     </div>
   )
