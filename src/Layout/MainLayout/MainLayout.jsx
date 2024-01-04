@@ -8,7 +8,7 @@ function MainLayout() {
     <div>
       <Header/>
       <Outlet/>
-      <ScrollRestoration/>
+      {/* <ScrollRestoration/> */}
       <Footer/>
     </div>
   )

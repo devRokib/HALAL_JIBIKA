@@ -13,6 +13,9 @@ import EditJob from "../Component/Edit Job/EditJob";
 import ApplyNow from "../Component/ApplyNow/ApplyNow";
 import AddJob from "../Component/AddJob/AddJob";
 import PrivateRoute from "./PrivateRoute";
+import UserProfile from "../Component/User Profile/Profile";
+import EditProfileForm from "../Component/EditProfile/EditProfile";
+import EditProfile from "../Component/EditProfile/EditProfile";
 
 
 
@@ -60,6 +63,14 @@ const routes = createBrowserRouter([
             {
               path:'/signup',
               element:<SignUp/>,
+             },
+            {
+              path:'/profile',
+              element:<UserProfile/>,
+             },
+            {
+              path:'/editprofile',
+              element:<EditProfile/>,
              },
              {
               path:'/jobs/:id/',

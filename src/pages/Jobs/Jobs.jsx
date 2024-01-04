@@ -11,6 +11,7 @@ function Jobs() {
     { id: 2, title: 'Job 2',  },
     
   ]);
+ 
 
   const handleDelete = async (id) => {
     try {
@@ -19,15 +20,22 @@ function Jobs() {
     } catch (error) {
     }
   };
+
+  const [favoriteJobs, setFavoriteJobs] = useState([]);
+  const addToFavorites = (job) => {
+    setFavoriteJobs((prevFavorites) => [...prevFavorites, job]);
+  };
   return (
     <div className="jobsMainSection">
      <div className="jobsTitle">
      <h1 style={{textAlign:'center'}}>Available Jobs</h1>
+
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et non voluptas adipisci odit, sapiente voluptates.</p>
+
      </div>
         <div className='jobMainContainer'>
         {
-          userData.map((data)=><Job key={data.id}  data= {data} onDelete={handleDelete} userData={userData} setJobs={setJobs}/>)
+          userData.map((data)=><Job key={data.id}  data= {data} onDelete={handleDelete} userData={userData} setJobs={setJobs} addToFavorites={addToFavorites}/>)
         }
         </div>
         <div className="addjobWrapper">

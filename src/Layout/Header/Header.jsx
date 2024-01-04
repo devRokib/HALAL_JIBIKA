@@ -33,17 +33,17 @@ function Header() {
                 <NavLink to="/contact">Contact</NavLink>
               </div>
               <div className="signMenu">
-                <NavLink>
-                {
-                  user?<NavLink onClick={logout}>LogOut</NavLink>:<NavLink to="/signin">SignIn</NavLink>
-                }
-                </NavLink>
-                
-                <NavLink>
-                <span className='UserDisplayName'>{user?.displayName}</span>
-                  <span><NavLink to='/signup'>{user?.photoURL?<img   src={user?.photoURL} alt=""/> :"SignUp"}</NavLink>
-                </span>
-                </NavLink>
+              {user ? (
+            <>
+              <NavLink to="/profile">{user?.displayName} {user?.photoURL?<img   src={user?.photoURL} alt=""/> :"SignUp"}</NavLink>
+              <NavLink onClick={logout}>LogOut</NavLink>
+            </>
+          ) : (
+            <>
+              <NavLink to="/signin">SignIn</NavLink>
+              <NavLink to="/signup">SignUp</NavLink>
+            </>
+          )}
                 </div>
             </ul>
            

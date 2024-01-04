@@ -7,7 +7,7 @@ import { MdOutlineFavorite } from "react-icons/md";
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
-function Job({data,onDelete,setJobs, }) {
+function Job({data,onDelete,setJobs,addToFavorites }) {
   const { id, title, companyName, description, position, logo } = data;
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
@@ -32,6 +32,11 @@ function Job({data,onDelete,setJobs, }) {
     }
   };
     
+  const handleAddToFavorites = () => {
+    addToFavorites(data);
+    Swal.fire('Added to Favorites!', 'The job has been added to your favorites.', 'success');
+  };
+
   return (
     <div className='jobSection'>
       <div className="jobItem">
@@ -50,7 +55,7 @@ function Job({data,onDelete,setJobs, }) {
           <div className="editDeleteBtn">
             <NavLink className='editBtn' to={`/jobs/${id}/editjob`}><FaEdit /></NavLink>
             <NavLink  onClick={handleDeleteClick} className='deleteBtn'><MdDelete /></NavLink>
-            <NavLink  to={`/jobs/${id}/favorite`} className='favoriteBtn'><MdOutlineFavorite /></NavLink>
+            <NavLink onClick={handleAddToFavorites}  className='favoriteBtn'><MdOutlineFavorite /></NavLink>
           </div>
 
         <NavLink className='moreInfoBtn' to={`/jobs/${id}/applynow`}>

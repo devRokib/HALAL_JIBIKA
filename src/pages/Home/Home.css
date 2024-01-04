@@ -146,6 +146,22 @@
     font-size: 21px;
   }
 }
+.ExploreBtn {
+  margin-top: 35px;
+  font-size: 1.5rem; 
+  padding: 15px 30px; 
+  background-color: #3498db; 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ExploreBtn:hover {
+  transform: scale(1.1); 
+}
+
 
 /* Media query for screens between 768px and 1200px (adjust as needed) */
 @media (min-width: 768px) and (max-width: 1200px) {
