@@ -27,7 +27,7 @@
     line-height: 25px;
 }
 .jobsTitle {
-    width: 600px;
+    width: 500px;
     margin: auto;
     text-align: center;
     padding: 20px 0;
@@ -35,6 +35,9 @@
 .jobsTitle h1 {
     font-family: sans-serif;
     margin-bottom: 6px;
+}
+.jobsTitle p{
+    text-align: center;
 }
 .addJobBtn {
     display: inline-block;
@@ -49,9 +52,19 @@
     text-align: center;
 }
 
-
+.addjobWrapper {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
 /*latestJobResponsiv*/
-@media (max-width:790px) {
+@media (max-width:992px) {
+    .jobMainContainer {
+        display: grid;
+        grid-template-columns: auto auto  ;
+   }
+}
+@media (max-width:850px) {
     .jobMainContainer {
         display: grid;
         grid-template-columns: auto auto ;

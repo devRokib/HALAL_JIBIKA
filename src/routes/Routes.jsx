@@ -49,12 +49,13 @@ const routes = createBrowserRouter([
               element:<SignIn/>
             },
             {
-              path:'/addjob',
+              path:'/addjob/:id/',
               element:(
                 <PrivateRoute>
                   <AddJob/>
                 </PrivateRoute>
-              )
+              ),
+              loader:({params})=>fetch(`http://localhost:9000/jobs/${params.id}`)
             },
             {
               path:'/signup',

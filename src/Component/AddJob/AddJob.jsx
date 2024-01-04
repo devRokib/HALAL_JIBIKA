@@ -26,19 +26,15 @@ function AddJob() {
             
         }
         else{
-
-        }
-           
-        
-    
-        try {
+         }
+         try {
             const response = await axios.post(`http://localhost:9000/jobs`, jobData);
            setJobData({
-                title: '',
-                companyName: '',
-                description: '',
-                position: '',
-                logo: '',
+                title,
+                companyName,
+                description,
+                position,
+                logo,
             });
             navigate('/jobs')
             return   Swal.fire(

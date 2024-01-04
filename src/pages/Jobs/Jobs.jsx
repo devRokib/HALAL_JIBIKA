@@ -31,7 +31,7 @@ function Jobs() {
         }
         </div>
         <div className="addjobWrapper">
-        <NavLink className='addJobBtn' to='/addjob'>add job</NavLink>
+        <NavLink className='addJobBtn' to={`/addjob/:id/`}>add job</NavLink>
         </div>
     </div>
   )

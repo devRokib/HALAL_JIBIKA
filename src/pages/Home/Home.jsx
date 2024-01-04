@@ -18,7 +18,7 @@ function Home() {
             </div>
             <div className="homeRight">
               <div className="headerImg">
-              <img src="https://img.freepik.com/free-vector/businessman-business-icons_1284-4591.jpg?w=740&t=st=1704177746~exp=1704178346~hmac=fa3ffade9b4b677ee8c9de1f2a87be718d68a8b024ee97cd6c6e20faefd536f7" alt="" />
+              <img src="https://i.ibb.co/9WnKS8x/istockphoto-1447332295-612x612.jpg" alt="istockphoto-1447332295-612x612" border="0"/>
               </div>
             </div>
           </div>
